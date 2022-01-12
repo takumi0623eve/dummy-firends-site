@@ -1,0 +1,588 @@
+@charset 'UTF-8';
+
+@mixin sp {
+    @media (max-width:1040px) {
+        @content;
+    }
+}
+@mixin  pad {
+    @media (max-width:1400px){
+        @content;
+    }
+}
+@mixin design-list {
+    @media (max-width:1720px){
+        @content;
+    }
+}
+
+$prs :970 / 1080;
+$tateyoko : 881px*$prs/1567px*$prs;
+
+html{
+    font-size: 62.5%;
+}
+
+*,*::before,*,::after{
+    box-sizing: border-box;
+}
+ul{
+    padding-left: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    font-family: '-apple-system';
+    font-family: 'Noto Sans JP',
+    sans-serif;
+    padding: 0 100px;
+    margin: 0;
+    .header{
+        position: fixed;
+        top: 0;
+        left: 100px;
+        width: 353px*$prs;
+        height: 1080px*$prs;
+        background-color: rgba($color: #3c3c3c, $alpha: 1.0);
+        color: #fff;
+
+        box-shadow: inset 0 0 10px 7px #4d4d4d;
+        z-index: 100;
+        @include sp{
+            left: 0;
+            width: 100%;
+            height: 300px;
+        }
+        .heading{
+            font-size: 50px*$prs;
+
+            position: absolute;
+            top: 68px*$prs;
+            left: 76px*$prs;
+            width: 191px*$prs;
+            height: 134px*$prs;
+            text-align: left;
+            letter-spacing: 10px*$prs;
+            color: #F0F0F0;
+            opacity: 1;
+            @include sp{
+                white-space: nowrap;
+                left: 7%;
+            }
+        }
+        .Policy{
+            font-size: 30px*$prs;
+            position: absolute;
+            top: 417px*$prs;
+
+            left: 104px*$prs;
+            width: 142px*$prs;
+            height: 51px*$prs;
+            border-radius: 40px;
+
+            text-align: center;
+            vertical-align: middle;
+            letter-spacing: 3.3px*$prs;
+            color: rgba($color: #f0f0f0, $alpha: 1.0);
+            opacity: 1;
+            z-index: 20;
+            box-shadow: inset 0 0 10px 7px #2c2c2c;
+            transition: ease-in 0.4s;
+            &:hover{
+                background-color: rgba(#F07878 ,$alpha: 0.8);
+                z-index: 10;
+
+                color: rgba($color: #fff, $alpha: 1.0);
+                box-shadow:inset 0 0 10px 7px #f08787;
+            }
+            @include sp{
+                top: 250px*$prs;
+                left: 15%;
+            }
+        }
+        .Works{
+            font-size: 30px*$prs;
+            position: absolute;
+            top: 563px*$prs;
+
+            left: 104px*$prs;
+            width: 142px*$prs;
+            height: 51px*$prs;
+            border-radius: 40px;
+
+            text-align: center;
+            letter-spacing: 3.3px*$prs;
+            color: #F0F0F0;
+            opacity: 1;
+
+            box-shadow: inset 0 0 10px 7px #2c2c2c;
+            transition: ease-in 0.4s;
+            &:hover {
+                background-color: rgba(#F07878, $alpha: 0.8);
+                z-index: 10;
+
+                box-shadow: inset 0 0 10px 7px #f08787;
+            }
+            @include sp {
+                right: 15%;
+                top: 250px*$prs;
+                left: auto;
+            }
+        }
+        .active{
+            background-color: rgba(#F07878, $alpha: 0.8);
+            z-index: 10;
+            box-shadow: inset 0 0 10px 7px #f08787;
+        }
+        .lead{
+            font-size: 20px*$prs;
+            position: absolute;
+            top: 774px*$prs;
+            left: 113px*$prs;
+            text-align: center;
+            letter-spacing: 2px*$prs;
+            color: #969696;
+            opacity: 1;
+            @include sp{
+                top: 20px*$prs;
+                right: 5%;
+                left: auto;
+                font-size: 15px*$prs;
+            }
+        }
+        .foot{
+            .twi{
+
+                position: absolute;
+                top: 852px*$prs;
+                left: 156px*$prs;
+                width: 42px;
+                height: 35px;
+                background: transparent url('../img/Twitter_Logo_WhiteOnImage.png') 0% 0% no-repeat padding-box;
+                opacity: 1;
+                cursor: pointer;
+                p{
+                    display: none;
+                }
+                @include sp{
+                    top: 70px*$prs;
+                    right: 7%;
+                    left: auto;
+                }
+            }
+            .cocoda{
+                position: absolute;
+                font-size: 30px*$prs;
+                top: 884px*$prs;
+                left: 110px*$prs;
+                text-align: left;
+                letter-spacing: 3px*$prs;
+                color: #F0F0F0;
+                opacity: 1;
+                @include sp{
+                    top: 110px*$prs;
+                    right: 5%;
+                    left: auto;
+                    font-size: 20px*$prs;
+                }
+            }
+            .redesign{
+                position: absolute;
+                font-size: 20px*$prs;
+                top: 964px*$prs;
+                left: 54px*$prs;
+                text-align: center;
+                letter-spacing: 2px*$prs;
+                color: #F0F0F0;
+                opacity: 1;
+                @include sp{
+                    top: 180px*$prs;
+                    right: 5%;
+                    left: auto;
+                    font-size: 10px*$prs;
+                }
+            }
+        }
+        @include sp{
+            left: 0;
+        }
+    }
+
+    .main{
+        padding-left: 353px*$prs;
+        @include sp {
+            padding-left: 0;
+            margin-top: 300px;
+        }
+        .container-box{
+            display: flex;
+            flex-direction: column;
+            .container {
+                opacity: 1;
+                position: relative;
+                width: 100%;
+                &:hover .hover-bg {
+                    opacity: 10;
+                    background: rgba($color: #000000, $alpha: 0.5) 0% 0% no-repeat padding-box;
+                }
+                .image {
+                    width: 100%;
+                    object-fit: cover;
+                }
+                .grd{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: transparent linear-gradient(61deg, #A34014 0%, #330C8D 100%) 0% 0% no-repeat padding-box ;
+                }
+
+                .hover-bg {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #f0f0f0;
+                    text-align: center;
+                    letter-spacing: 4px*$prs;
+                    color: #F0F0F0;
+                    opacity: -1;
+                    font-size: 40px*$prs;
+                    transition: linear 0.3s;
+                    cursor: pointer;
+                    display: table;
+                    p{
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    @include sp{
+                        font-size: 40px*$prs*0.7;
+                    }
+                }
+            }
+        }
+    }
+    .policy{
+        display: flex;
+        width: 100%;
+        height: 1078px*$prs;
+        background: #EBE4DF 0% 0% no-repeat padding-box;
+        opacity: 1;
+
+        align-items: center;
+        justify-content: center;
+        .head-box{
+            text-align: center;
+            .heading{
+                display: inline-block;
+                width: 100%;
+                font-size: 70px*$prs;
+                letter-spacing: 21px*$prs;
+                color: #3C3C3C;
+                opacity: 1;
+                @include pad{
+                    font-size: 36px*$prs;
+                    letter-spacing: 14px*$prs;
+                }
+                @include sp{
+                    margin-top: 280px;
+                    font-size: 32px*$prs;
+                    letter-spacing: 13px*$prs;
+                }
+                .ui{
+                    font-size: 76px*$prs;
+                    @include pad{
+                        font-size: 42px*$prs;
+                    }
+                    @include sp{
+                        font-size: 40px*$prs;
+                    }
+                }
+            }
+            .sub-head{
+                display: inline-block;
+                width: 60%;
+                font-size: 30px*$prs;
+                letter-spacing: 3px*$prs;
+                color: #3C3C3C;
+                opacity: 1;
+                @include pad{
+                    font-size: 18px*$prs;
+                    letter-spacing: 2px*$prs;
+                }
+                @include sp{
+                    width: 72%;
+                    margin-bottom: 280px;
+                    font-size: 14px*$prs;
+                    letter-spacing: 1px*$prs;
+                    line-height: 2;
+                }
+            }
+        }
+        @include sp{
+            height: auto;
+        }
+    }
+    .works{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #EBE4DF 0% 0% no-repeat padding-box;
+        opacity: 1;
+        text-align: center;
+        .head-nav{
+            @include sp{
+                padding-bottom: 40px;
+                border-bottom: 3px solid #3c3c3c;
+                &::before {
+                    content: 'Design-List';
+                    display: block;
+                    font-size: 24px;
+                    color: #3c3c3c;
+                    padding-top: 20px ;
+                    padding-bottom: 40px;
+                }
+            }
+            .nav-list{
+                margin-top: 38px*$prs;
+                display: flex;
+                color: #F0F0F0;
+                transition: ease-in 0.3s;
+                justify-content: space-around;
+                @include design-list{
+                    display: block;
+                }
+                @include sp{
+                    display: grid;
+                    margin-top: auto;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8%;
+                    margin: auto 1%;
+                }
+                .nav-item{
+                    a{
+                        display: block;
+                        font-size: 28px*$prs;
+                        background-color: #3c3c3c;
+                        padding: 14px*$prs 46px*$prs;
+                        border-radius: 71px*$prs;
+                        text-align: center;
+                        letter-spacing: 3.3px*$prs;
+                        opacity: 0.7;
+                        transition: ease-in 0.3s;
+                        &:hover{
+                            box-shadow: inset 0 0 10px 7px #5f5f5f;
+                            opacity: 1;
+                        }
+                        @include design-list{
+                            margin: 1% 5%;
+                        }
+                        @include sp{
+                            font-size: 20px*$prs;
+                            letter-spacing: 2px*$prs;
+                            padding: 10px*$prs 30px*$prs;
+                            margin: 0;
+                        }
+                    }
+                }
+                .active a{
+                    opacity: 1;
+                }
+            }
+        }
+        .heading{
+            display: flex;
+            flex-direction: column;
+            .title{
+                font-size: 70px*$prs;
+                color: #3c3c3c;
+                opacity: 1;
+                letter-spacing: 21px*$prs;
+                margin-top: 189px*$prs;
+                @include pad{
+                    font-size: 42px*$prs;
+                    letter-spacing: 10px*$prs;
+                }
+                @include sp{
+                    font-size: 40px*$prs;
+                    letter-spacing: 8px*$prs;
+                    margin-top: 40px*$prs;
+                }
+            }
+            .sub-title{
+                display: inline-block;
+                font-size: 40px*$prs;
+                color: #969696;
+                opacity: 1;
+                letter-spacing: 8px*$prs;
+                margin-bottom: 339px*$prs;
+                @include pad{
+                    font-size: 34px*$prs;
+                    letter-spacing: 7px*$prs;
+                }
+                @include sp{
+                    font-size: 30px*$prs;
+                    letter-spacing: 6px*$prs;
+                    margin-bottom: 150px*$prs;
+                }
+            }
+        }
+        .section{
+            display: flex;
+            align-items: center;
+            padding: 0 111px*$prs;
+            height: 881px*$prs;
+            @include pad{
+                padding: 0;
+                margin: auto 5%;
+            }
+            &:nth-child(even){
+                flex-direction: row-reverse;
+                .texts{
+                    margin-left: 77px*$prs;
+                }
+                @include pad{
+                    flex-direction: row;
+                    .texts{
+                        margin-left: 0;
+                    }
+                }
+            }
+            &:nth-child(odd){
+                .image{
+                    margin-left: 77px*$prs;
+                    @include pad{
+                        margin-left: 0;
+                    }
+                }
+            }
+            .texts{
+                width: 50%*$prs;
+                font-size: 30px*$prs;
+                text-align: left;
+                letter-spacing: 3px*$prs;
+                color: #505050;
+                opacity: 1;
+            }
+            .image{
+                width: 50%*$prs;
+                object-fit: cover;
+                transition: ease-in 0.3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            @include pad{
+                display: block;
+                height: auto;
+                .texts{
+                    display: inline-block;
+                    width: 80%;
+                    font-size: 22px*$prs;
+                    text-align: center;
+                    letter-spacing: 2px*$prs;
+                    margin-bottom: 20px;
+                }
+                .image{
+                    width: 90%;
+                    &:hover{
+                        transform: scale(1.05);
+                    }
+                    margin-bottom: 180px;
+                }
+            }
+            @include sp{
+                .texts{
+                    font-size: 20px*$prs;
+                }
+            }
+        }
+        .download{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 111px*$prs;
+            height: 881px*$prs;
+            .title{
+                display: block;
+                font-size: 40px*$prs;
+                letter-spacing: 4px*$prs;
+                color: #505050;
+                opacity: 1;
+            }
+            .dl-container{
+                margin-top: 67px*$prs;
+                .dl-list{
+                    display: flex;
+                    .dl-item a{
+                        display: inline-block;
+                        font-size: 40px*$prs;
+                        letter-spacing: 4px*$prs;
+                        color: #EBE4DF;
+                        background-color: #3c3c3c;
+                        border-radius: 82px*$prs;
+                        padding: 30px*$prs 96px*$prs;
+                        transition: ease-in 0.3s;
+                        &:hover{
+                            background-color: rgba(#F07878, $alpha: 0.8);
+                        }
+                    }
+                    .dl-item + .dl-item{
+                        margin-left: 42px*$prs;
+                    }
+                }
+            }
+            .attention{
+                margin-top: 109px*$prs;
+                font-size: 25px*$prs;
+                letter-spacing: 2.5px*$prs;
+                color: #505050;
+            }
+            @include pad{
+                height: auto;
+                padding: 0;
+                display: block;
+                .title{
+                    margin-top: 50px;
+                }
+                .dl-container{
+                    .dl-list{
+                        padding-left: 0;
+                        flex-direction: column;
+                        align-items: center;
+                        .dl-item a{
+                            display: block;
+                            font-size: 24px*$prs;
+                            letter-spacing: 3px*$prs;
+                            border-radius: 76px*$prs;
+                            text-align: center;
+                            padding: 12px 120px;
+                            margin-bottom: 30px;
+                            &:hover{
+                                transform: scale(1.2);
+                            }
+                        }
+                        .dl-item+.dl-item {
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .attention{
+                    font-size: 18px*$prs;
+                    letter-spacing: 2px*$prs;
+                }
+            }
+        }
+    }
+
+    @include sp {
+        padding: 0;
+    }
+}
